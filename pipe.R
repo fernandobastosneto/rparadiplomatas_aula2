@@ -52,21 +52,12 @@ recipiente(rep("farinha", 2), "água", "fermento", "leite", "óleo") %>%
 
 # ATALHO DO %>%: CTRL (command) + SHIFT + M
 
- 
-
-
 # Exercício ---------------------------------------------------------------
 
 # 1. Reescreva o código abaixo utilizando o pipe. Na sua opinião, 
 # de que forma é mais facil de ler e entender o que está sendo executado?
 # Com ou sem o pipe? 
 library(readr)
-base_de_dados <- read_csv2(file = "dados/voos_de_janeiro.csv")
+fmi <- readRDS(file = "dados/fmi.rds")
 
-round(mean(base_de_dados$atraso_saida, na.rm = TRUE), 2)
-
-
-# Resolução
-base_de_dados$atraso_chegada %>% 
-  mean(na.rm=TRUE) %>%
-  round(2)
+round(mean(fmi$desemprego, na.rm = TRUE), 2)
